@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=2]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( 1.4, 0.365814, -1.6, 1.7, 0.365814, -1, 3.2, 0.365814, -1.9, 3.5, 0.365814, -5.2, -9.4, 0.365814, -4, -8.2, 0.365814, -4, -7.9, 0.365814, -5.5, -9.4, 0.365814, -9.4, 6.5, 0.365814, -5.2, 6.8, 0.365814, -3.4, 9.5, 0.365814, -3.4, 9.5, 0.365814, -9.4, -4.9, 0.365814, -2.8, -1.6, 0.365814, -1, -1.3, 0.365814, -1.6, -4.9, 0.365814, -5.5, -4.9, 0.365814, -2.8, -1.3, 0.365814, -1.6, 1.4, 0.365814, -1.6, 3.5, 0.365814, -5.2, -0.0999994, 0.365814, -9.4, -9.4, 0.365814, -9.4, -7.9, 0.365814, -5.5, -4.9, 0.365814, -5.5, -0.0999994, 0.365814, -9.4, 3.5, 0.365814, -5.2, 6.5, 0.365814, -5.2, 9.5, 0.365814, -9.4, -0.0999994, 0.365814, -9.4, -5.8, 1.16581, -2.8, -5.8, 1.76581, -4, -7, 1.76581, -4, -7, 1.16581, -2.8, 0.200001, 0.365814, 9.5, 0.200001, 0.365814, 1.7, -1.6, 0.365814, 1.4, -8.2, 0.365814, -2.8, -8.2, 0.365814, -4, -9.4, 0.365814, -4, -9.4, 0.365814, 9.5, -1.6, 0.365814, -1, -4.9, 0.365814, -2.8, -5.8, 1.16581, -2.8, -4.4, 0.365814, -2.2, -1.6, 0.365814, -1, -5.8, 1.16581, -2.8, -7, 1.16581, -2.8, -1.6, 0.365814, 1.4, -4.4, 0.365814, -2.2, -5.65, 0.365814, -1.75, -1.6, 0.365814, 1.4, -7, 1.16581, -2.8, -8.2, 0.365814, -2.8, -9.4, 0.365814, 9.5, 0.200001, 0.365814, 9.5, -5.65, 0.365814, -1.75, -6.43, 0.365814, -1.03, 9.5, 0.365814, -3.4, 6.8, 0.365814, -3.4, 6.5, 0.365814, -1.6, 3.2, 0.365814, -1.9, 1.7, 0.365814, -1, 1.7, 0.365814, 1.4, 6.5, 0.365814, -1.6, 9.5, 0.365814, -3.4, 6.5, 0.365814, -1.6, 1.7, 0.365814, 1.4, 0.200001, 0.365814, 9.5, 9.5, 0.365814, 9.5, 4.39417, 0.965814, 6.20822, 4.40612, 0.365814, 4.41548, 2.61216, 0.365814, 6.19503, 2.60022, 0.365814, 7.98777, 6.22425, 0.365814, 8.01414, 1.7, 0.365814, 1.4, 0.200001, 0.365814, 1.7, 0.200001, 0.365814, 9.5 )
+polygons = [ PoolIntArray( 3, 0, 2 ), PoolIntArray( 0, 1, 2 ), PoolIntArray( 7, 4, 6 ), PoolIntArray( 4, 5, 6 ), PoolIntArray( 11, 8, 10 ), PoolIntArray( 8, 9, 10 ), PoolIntArray( 14, 12, 13 ), PoolIntArray( 20, 15, 19 ), PoolIntArray( 15, 16, 19 ), PoolIntArray( 16, 17, 19 ), PoolIntArray( 17, 18, 19 ), PoolIntArray( 24, 21, 23 ), PoolIntArray( 21, 22, 23 ), PoolIntArray( 28, 25, 27 ), PoolIntArray( 25, 26, 27 ), PoolIntArray( 32, 29, 31 ), PoolIntArray( 29, 30, 31 ), PoolIntArray( 35, 33, 34 ), PoolIntArray( 39, 36, 38 ), PoolIntArray( 36, 37, 38 ), PoolIntArray( 42, 43, 41 ), PoolIntArray( 43, 40, 41 ), PoolIntArray( 47, 44, 49 ), PoolIntArray( 44, 48, 49 ), PoolIntArray( 48, 45, 49 ), PoolIntArray( 45, 46, 49 ), PoolIntArray( 53, 54, 50 ), PoolIntArray( 50, 55, 56 ), PoolIntArray( 55, 51, 56 ), PoolIntArray( 51, 52, 56 ), PoolIntArray( 52, 53, 56 ), PoolIntArray( 53, 50, 56 ), PoolIntArray( 59, 57, 58 ), PoolIntArray( 63, 60, 62 ), PoolIntArray( 60, 61, 62 ), PoolIntArray( 67, 68, 73 ), PoolIntArray( 68, 64, 65 ), PoolIntArray( 65, 66, 70 ), PoolIntArray( 66, 67, 71 ), PoolIntArray( 73, 68, 70 ), PoolIntArray( 67, 73, 72 ), PoolIntArray( 68, 65, 70 ), PoolIntArray( 70, 66, 71 ), PoolIntArray( 71, 67, 72 ), PoolIntArray( 73, 70, 69 ), PoolIntArray( 72, 73, 69 ), PoolIntArray( 70, 71, 69 ), PoolIntArray( 71, 72, 69 ), PoolIntArray( 76, 74, 75 ) ]
+agent/height = 1.99
+agent/radius = 0.4
+agent/max_slope = 49.3
+edge/max_length = 16.83
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.14902, 0.494118, 0.14902, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 2 )
+
+[sub_resource type="ConvexPolygonShape" id=5]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="ConvexPolygonShape" id=6]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ConvexPolygonShape" id=7]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ConvexPolygonShape" id=8]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ConvexPolygonShape" id=9]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[node name="Floor" type="Spatial"]
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+editor/display_folded = true
+transform = Transform( 10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/MeshInstance"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/MeshInstance/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402112, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/MeshInstance2/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.93059, -0.434186, 5.77603 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/MeshInstance3/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.93059, 0.756967, -3.44415 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/MeshInstance4/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 0.900896, -0.434035, 0, 0.434035, 0.900896, -6.39948, 0.161547, -4.00974 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/MeshInstance5/StaticBody"]
+shape = SubResource( 9 )
