@@ -8,6 +8,5 @@ func _input(event):
 		var to = from + project_ray_normal(event.position) * ray_length
 		var space_state = get_world().direct_space_state
 		var result = space_state.intersect_ray(from, to, [], 1)
-		
 		if result:
 			get_tree().call_group("players", "move_to", result.position)

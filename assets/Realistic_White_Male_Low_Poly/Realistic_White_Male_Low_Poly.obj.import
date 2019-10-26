@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Realistic_White_Male_Low_Poly.obj-c97634d7062e604d126b1f15c222220f.mesh"
+
+[deps]
+
+files=[ "res://.import/Realistic_White_Male_Low_Poly.obj-c97634d7062e604d126b1f15c222220f.mesh" ]
+
+source_file="res://assets/Realistic_White_Male_Low_Poly/Realistic_White_Male_Low_Poly.obj"
+dest_files=[ "res://.import/Realistic_White_Male_Low_Poly.obj-c97634d7062e604d126b1f15c222220f.mesh", "res://.import/Realistic_White_Male_Low_Poly.obj-c97634d7062e604d126b1f15c222220f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
