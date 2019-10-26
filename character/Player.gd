@@ -7,7 +7,6 @@ var path = []
 var path_ind = 0
 const move_speed = 6
 var previous_coord = null
-var value = 0
 #onready var player_body_animation = $player_body/AnimationPlayer
 
 func _ready():
@@ -36,4 +35,4 @@ func move_to(target_pos):
 		get_parent().remove_child(previous_coord)
 	previous_coord = coord.instance()
 	previous_coord.transform.origin = target_pos
-	get_parent().add_child(previous_coord) 
+	get_parent().add_child(previous_coord)
