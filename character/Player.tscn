@@ -1,13 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://character/Player.gd" type="Script" id=1]
 [ext_resource path="res://character/dummy_direction.gd" type="Script" id=2]
 [ext_resource path="res://character/Camera.gd" type="Script" id=3]
 [ext_resource path="res://character/player_body.gd" type="Script" id=4]
+[ext_resource path="res://character/human_body.tscn" type="PackedScene" id=5]
+[ext_resource path="res://character/name_tag_position.gd" type="Script" id=6]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="CapsuleShape" id=1]
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.0862745 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -20,13 +27,34 @@ transform = Transform( -1, -5.96334e-008, 6.39266e-008, 0, 0.731235, 0.682126, -
 script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.295778, 0, 0, 0, 1, 0, 0, 0, 0.381525, 0, 0.11, 0 )
+transform = Transform( 0.407601, 0, 0, 0, 1.264, 0, 0, 0, 0.240658, 0, -0.0777524, 0 )
 shape = SubResource( 1 )
 
 [node name="player_body" type="Spatial" parent="."]
 script = ExtResource( 4 )
 
-[node name="body" type="MeshInstance" parent="player_body"]
-transform = Transform( -0.5, -7.54979e-008, 6.60024e-015, 0, -2.18557e-008, -1, 7.54979e-008, -0.5, 4.37114e-008, 0, 0, 0 )
-mesh = SubResource( 2 )
-material/0 = null
+[node name="human_body" parent="player_body" instance=ExtResource( 5 )]
+
+[node name="name_tag_position" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45267, 0 )
+script = ExtResource( 6 )
+
+[node name="name_tag" type="Control" parent="."]
+margin_left = -2.0098
+margin_right = 1.99023
+margin_bottom = 2.96646
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="label" type="Label" parent="name_tag"]
+margin_left = -30.4483
+margin_top = -19.3433
+margin_right = 30.5517
+margin_bottom = -5.34329
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1.0262, 0.994282 )
+custom_styles/normal = SubResource( 3 )
+text = "Ankeris"
+align = 1
+valign = 1
