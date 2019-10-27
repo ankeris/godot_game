@@ -19,6 +19,13 @@ signal connection_succeeded()
 signal game_ended()
 signal game_error(what)
 
+func _ready():
+	get_tree().connect("network_peer_connected", self, "_player_connected")
+	get_tree().connect("network_peer_disconnected", self,"_player_disconnected")
+	get_tree().connect("connected_to_server", self, "_connected_ok")
+	get_tree().connect("connection_failed", self, "_connected_fail")
+	get_tree().connect("server_disconnected", self, "_server_disconnected")
+	
 # Callback from SceneTree
 func _player_connected(id):
 	# This is not used in this demo, because _connected_ok is called for clients
@@ -78,12 +85,12 @@ remote func pre_start_game(spawn_points):
 
 	get_tree().get_root().get_node("lobby").hide()
 
-	var player_scene = load("res://scenes/Player3d.tscn")
+	var player_scene = load("res://scenes/Player.tscn")
 
 	for p_id in spawn_points:
 		var spawn_pos = level_1.get_node("spawn_points/" + str(spawn_points[p_id])).get_translation()
 		var player = player_scene.instance()
-
+		print(spawn_pos)
 		player.set_name(str(p_id)) # Use unique ID as node name
 		player.set_translation(spawn_pos)
 		player.set_network_master(p_id) #set unique id as master
@@ -96,11 +103,6 @@ remote func pre_start_game(spawn_points):
 			player.set_player_name(players[p_id])
 
 		level_1.get_node("players").add_child(player)
-
-	# Set up score
-	level_1.get_node("score").add_player(get_tree().get_network_unique_id(), player_name)
-	for pn in players:
-		level_1.get_node("score").add_player(pn, players[pn])
 
 	if (not get_tree().is_network_server()):
 		# Tell server we are ready to start
@@ -168,10 +170,3 @@ func end_game():
 	emit_signal("game_ended")
 	players.clear()
 	get_tree().set_network_peer(null) # End networking
-
-func _ready():
-	get_tree().connect("network_peer_connected", self, "_player_connected")
-	get_tree().connect("network_peer_disconnected", self,"_player_disconnected")
-	get_tree().connect("connected_to_server", self, "_connected_ok")
-	get_tree().connect("connection_failed", self, "_connected_fail")
-	get_tree().connect("server_disconnected", self, "_server_disconnected")

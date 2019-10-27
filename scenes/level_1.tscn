@@ -1,33 +1,27 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/level_1.gd" type="Script" id=1]
-[ext_resource path="res://assets/1lvlsword/sword_8.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/world/Floor.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/world/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Coordinate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://character/inventory/Inventory.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/world/Floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/world/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Coordinate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://character/inventory/Inventory.tscn" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="1lvlsword" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67117, 1.05462, -8.30075 )
+[node name="players" type="Spatial" parent="."]
 
-[node name="Floor" parent="." instance=ExtResource( 3 )]
+[node name="Floor" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00523376, -0.0236349, -0.026083 )
 
-[node name="Wall2" parent="." instance=ExtResource( 4 )]
+[node name="Wall2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 3.9959, 0, 0, 0, 1.06369, 0, 0, 0, 1.06369, 0, 0.365626, -10.2703 )
 
-[node name="Wall3" parent="." instance=ExtResource( 4 )]
+[node name="Wall3" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1.74666e-007, 0, 1.06369, 0, 1.06369, 0, -3.9959, 0, -4.64954e-008, -10, 0.365626, -0.270255 )
 
-[node name="Coordinate" parent="." instance=ExtResource( 5 )]
+[node name="Coordinate" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83848, 0 )
-
-[node name="Player" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33085, -6.978 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.93025, 0.25476, -0.264067, 0, 0.719676, 0.69431, 0.366925, -0.645882, 0.669479, 7.24615, 3.18772, 4.15154 )
@@ -44,4 +38,16 @@ directional_shadow_normal_bias = 0.54
 directional_shadow_depth_range = 1
 directional_shadow_max_distance = 27.2
 
-[node name="inventory" parent="." instance=ExtResource( 7 )]
+[node name="inventory" parent="." instance=ExtResource( 5 )]
+
+[node name="spawn_points" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.78787, 0, -1.50129 )
+
+[node name="0" type="Position3D" parent="spawn_points"]
+
+[node name="1" type="Position3D" parent="spawn_points"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.92336 )
+
+[node name="2" type="Position3D" parent="spawn_points"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90846, 0, 6.92336 )
