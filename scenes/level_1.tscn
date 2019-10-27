@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://scripts/level_1.gd" type="Script" id=1]
 [ext_resource path="res://assets/1lvlsword/sword_8.tscn" type="PackedScene" id=2]
-[ext_resource path="res://world/Floor.tscn" type="PackedScene" id=3]
-[ext_resource path="res://world/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://character/Coordinate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://character/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/world/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/world/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Coordinate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://character/inventory/Inventory.tscn" type="PackedScene" id=7]
 
 [node name="Spatial" type="Spatial"]

@@ -1,7 +1,7 @@
 extends KinematicBody
 
-const coord = preload("Coordinate.tscn")
-onready var nav = get_parent().get_node("Floor/Navigation")
+const coord = preload("res://scenes/Coordinate.tscn")
+onready var nav = $"../Floor/Navigation"
 # Path finding vars
 var path = []
 var path_ind = 0

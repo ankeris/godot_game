@@ -16,7 +16,11 @@ _global_script_class_icons={
 [application]
 
 config/name="Forgotten Road"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://scenes/lobby.tscn"
+
+[autoload]
+
+game_state="*res://scripts/game_state.gd"
 
 [rendering]
 
