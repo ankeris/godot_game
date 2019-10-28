@@ -70,7 +70,6 @@ remote func register_player(id, new_player_name):
 		for p_id in players: # Then, for each remote player
 			rpc_id(id, "register_player", p_id, players[p_id]) # Send player to new dude
 			rpc_id(p_id, "register_player", id, new_player_name) # Send new dude to player
-
 	players[id] = new_player_name
 	emit_signal("player_list_changed")
 
@@ -90,7 +89,6 @@ remote func pre_start_game(spawn_points):
 	for p_id in spawn_points:
 		var spawn_pos = level_1.get_node("spawn_points/" + str(spawn_points[p_id])).get_translation()
 		var player = player_scene.instance()
-		print(spawn_pos)
 		player.set_name(str(p_id)) # Use unique ID as node name
 		player.set_translation(spawn_pos)
 		player.set_network_master(p_id) #set unique id as master
@@ -154,7 +152,8 @@ func begin_game():
 	spawn_points[1] = 0 # Server in spawn point 0
 	var spawn_point_idx = 1
 	for p in players:
-		spawn_points[p] = spawn_point_idx
+		print(p)
+		spawn_points[spawn_point_idx] = p
 		spawn_point_idx += 1
 	# Call to pre-start game with the spawn points
 	for p in players:

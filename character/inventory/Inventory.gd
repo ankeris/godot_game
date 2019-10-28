@@ -42,7 +42,6 @@ func _ready():
 		var itemName = itemDictionary[item].itemName;
 		var itemIcon = itemDictionary[item].itemIcon;
 		var itemValue = itemDictionary[item].itemValue;
-		print(itemName)
 		itemList.append(ItemClass.new(itemName, itemIcon, null, itemValue));
 	
 	for i in range(20):

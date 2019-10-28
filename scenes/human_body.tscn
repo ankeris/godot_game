@@ -4,3 +4,6 @@
 
 [node name="human_body" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.402, 0 )
+
+[node name="Body" parent="Armature001/Skeleton" index="0"]
+use_in_baked_light = true
