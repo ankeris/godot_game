@@ -1,5 +1,4 @@
 extends KinematicBody
-
 #onready var global = get_node("/root/global")
 #onready var networking = get_node("/root/networking")
 

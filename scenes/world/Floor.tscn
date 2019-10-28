@@ -50,8 +50,10 @@ data = PoolVector3Array( -1, 1.2, -1, -1, 1, -1, -1, 1.2, 1, -1, 1.2, 1, -1, 1, 
 [node name="Floor" type="Spatial"]
 
 [node name="Navigation" type="Navigation" parent="."]
+editor/display_folded = true
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+editor/display_folded = true
 navmesh = SubResource( 10 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
@@ -88,6 +90,7 @@ material/0 = null
 shape = SubResource( 6 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.93059, 1.58665, 5.77603 )
 mesh = SubResource( 5 )
 material/0 = null
@@ -131,6 +134,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 13 )
 
 [node name="stairs_up" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+editor/display_folded = true
 transform = Transform( -1.7343, 0, -1.51618e-007, 0, 1, 0, 8.74228e-008, 0, -1, -6.17142, 1.00984, 1.62699 )
 mesh = ExtResource( 2 )
 material/0 = SubResource( 14 )
