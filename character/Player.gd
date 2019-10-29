@@ -29,9 +29,9 @@ func _ready():
 	is_network_master = is_network_master()
 	if (is_network_master):
 		$Camera.make_current()
-		print(current_name)
 
 func _physics_process(_delta):
+#	print(game_state.players)
 	# (NETWORK): what you see about yourself
 	if is_network_master:
 		if path_idx < path.size():

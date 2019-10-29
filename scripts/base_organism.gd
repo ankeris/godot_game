@@ -1,4 +1,4 @@
-extends KinematicBody
+extends Spatial
 #onready var global = get_node("/root/global")
 #onready var networking = get_node("/root/networking")
 
@@ -48,3 +48,17 @@ var velocity: Vector3 = Vector3()
 var interpolation_factor: float = 10  # how fast we interpolate rotations
 var animation_node: AnimationPlayer
 var previous_origin: Vector3 = Vector3()
+
+onready var dummy_direction = $"dummy_direction"
+var turning_speed = 0.1
+
+func turn_to_smooth(target_direction: Vector3):
+	dummy_direction.turn_to(target_direction)
+
+func _process(_delta):
+	var from = transform.basis.get_rotation_quat()
+	var to = dummy_direction.transform.basis.get_rotation_quat()
+	# find halfway point between a and b
+	var c = from.slerp(to, turning_speed)
+	transform.basis = Basis(c)
+	pass

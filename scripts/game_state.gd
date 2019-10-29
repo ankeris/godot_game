@@ -92,8 +92,8 @@ remote func pre_start_game(spawn_points):
 		player.set_name(str(p_id)) # Use unique ID as node name
 		player.set_translation(spawn_pos)
 		player.set_network_master(p_id) #set unique id as master
-
 		if (p_id == get_tree().get_network_unique_id()):
+			
 			# If node for this peer id, set name
 			player.set_player_name(player_name)
 		else:
@@ -110,7 +110,6 @@ remote func pre_start_game(spawn_points):
 
 remote func post_start_game():
 	get_tree().set_pause(false) # Unpause and unleash the game!
-
 var players_ready = []
 
 remote func ready_to_start(id):
@@ -152,8 +151,7 @@ func begin_game():
 	spawn_points[1] = 0 # Server in spawn point 0
 	var spawn_point_idx = 1
 	for p in players:
-		print(p)
-		spawn_points[spawn_point_idx] = p
+		spawn_points[p] = spawn_point_idx
 		spawn_point_idx += 1
 	# Call to pre-start game with the spawn points
 	for p in players:
