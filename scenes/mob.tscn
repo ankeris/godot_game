@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/base_organism.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.511304
+height = 0.456677
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.435294, 0.435294, 0.435294, 1 )
+
+[sub_resource type="CylinderMesh" id=3]
+material = SubResource( 2 )
+top_radius = 0.59
+bottom_radius = 0.32
+height = 1.11
+radial_segments = 53
+
+[sub_resource type="SphereMesh" id=4]
+radius = 0.5
+height = 1.0
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.188235, 0.345098, 0.364706, 1 )
+
+[sub_resource type="CylinderMesh" id=6]
+
+[node name="mob" type="Spatial"]
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0.699152, 0 )
+shape = SubResource( 1 )
+
+[node name="base_organism" parent="KinematicBody" instance=ExtResource( 1 )]
+
+[node name="body" type="Spatial" parent="KinematicBody/base_organism"]
+editor/display_folded = true
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody/base_organism/body"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="KinematicBody/base_organism/body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.896887, 0 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="KinematicBody/base_organism/body"]
+transform = Transform( -0.1, -2.11394e-008, -6.60024e-016, 0, -6.11959e-009, 0.1, -1.50996e-008, 0.14, 4.37114e-009, -0.173192, 1.09886, 0.380821 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="KinematicBody/base_organism/body"]
+transform = Transform( -0.1, -2.11394e-008, -6.60024e-016, 0, -6.11959e-009, 0.1, -1.50996e-008, 0.14, 4.37114e-009, 0.199419, 1.09886, 0.380821 )
+mesh = SubResource( 6 )
+material/0 = null

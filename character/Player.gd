@@ -6,6 +6,8 @@ onready var player_body_animation = $player_body/human_body/AnimationPlayer
 puppet var previous_coord = null
 const move_speed = 5
 var current_name = null;
+var control = false;
+var player_id
 
 # Path finding vars
 puppet var slave_pos = Vector3()
@@ -27,13 +29,12 @@ func set_player_name(new_name):
 func _ready():
 	slave_pos = self.get_translation()
 	is_network_master = is_network_master()
-	if (is_network_master):
+	if (control):
 		$Camera.make_current()
-		print(current_name)
 
 func _physics_process(_delta):
 	# (NETWORK): what you see about yourself
-	if is_network_master:
+	if control:
 		if path_idx < path.size():
 			move_vec = (path[path_idx] - global_transform.origin)
 			if move_vec.length() < 0.1:
@@ -63,10 +64,9 @@ func move_to(target_pos):
 		path = []
 		path = nav.get_simple_path(global_transform.origin, target_pos)
 		path_idx = 0
-		print(path)
 
 		# Add coordinate sign
-		if (is_network_master):
+		if (control):
 			rset("slave_path", path)
 			if (previous_coord):
 				get_parent().remove_child(previous_coord)
