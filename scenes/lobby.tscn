@@ -28,23 +28,15 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource( 2 )
-anchor_left = 0.5
-anchor_top = 0.51
-anchor_right = 0.5
-anchor_bottom = 0.51
-margin_left = -1360.0
-margin_top = -822.0
-margin_right = 2024.0
-margin_bottom = 777.0
-rect_min_size = Vector2( 100, 100 )
-rect_scale = Vector2( 0.403577, 0.403577 )
-rect_pivot_offset = Vector2( 1128.14, 790.494 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 42.0
 texture = ExtResource( 2 )
 expand = true
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="players" type="Panel" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 689.561
 margin_top = 104.838
@@ -81,22 +73,23 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 
 [node name="connect" type="Panel" parent="."]
-editor/display_folded = true
-anchor_right = 0.51
-anchor_bottom = 1.0
-margin_left = 700.0
-margin_top = 65.0
-margin_right = 457.76
-margin_bottom = -63.9997
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = -235.5
+margin_right = 140.0
+margin_bottom = 235.5
 size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_styles/panel = SubResource( 3 )
 
 [node name="name_label" type="Label" parent="connect"]
-margin_left = 17.1321
-margin_top = 171.151
-margin_right = 65.1321
-margin_bottom = 185.151
+margin_left = 17.0
+margin_top = 171.0
+margin_right = 72.0
+margin_bottom = 189.0
 size_flags_horizontal = 2
 size_flags_vertical = 0
 custom_styles/normal = ExtResource( 4 )
@@ -106,68 +99,39 @@ text = "Name:"
 [node name="name" type="LineEdit" parent="connect"]
 margin_left = 17.0
 margin_top = 188.0
-margin_right = 173.0
+margin_right = 252.0
 margin_bottom = 212.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "The Warrior"
 
-[node name="ip_label" type="Label" parent="connect"]
-margin_left = 19.0188
+[node name="password_label" type="Label" parent="connect"]
+margin_left = 17.4299
 margin_top = 224.0
-margin_right = 61.0188
-margin_bottom = 238.0
+margin_right = 85.4299
+margin_bottom = 255.0
 size_flags_horizontal = 2
 size_flags_vertical = 0
 custom_styles/normal = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "IP:"
+text = "Password: 
+"
 
-[node name="ip" type="LineEdit" parent="connect"]
+[node name="password" type="LineEdit" parent="connect"]
 margin_left = 17.0
-margin_top = 243.0
-margin_right = 173.0
-margin_bottom = 267.0
+margin_top = 244.0
+margin_right = 252.0
+margin_bottom = 268.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "127.0.0.1"
-
-[node name="port_label" type="Label" parent="connect"]
-margin_left = 18.5848
-margin_top = 279.0
-margin_right = 57.5848
-margin_bottom = 293.0
-size_flags_horizontal = 2
-size_flags_vertical = 0
-custom_styles/normal = ExtResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Port:"
-
-[node name="port" type="SpinBox" parent="connect"]
-margin_left = 17.0
-margin_top = 298.0
-margin_right = 173.0
-margin_bottom = 322.0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-min_value = 1024.0
-max_value = 65536.0
-value = 10567.0
-
-[node name="host" type="Button" parent="connect"]
-margin_left = 181.0
-margin_top = 189.0
-margin_right = 246.0
-margin_bottom = 209.0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-text = "Host"
+secret = true
 
 [node name="join" type="Button" parent="connect"]
-margin_left = 181.0
-margin_top = 244.226
-margin_right = 246.0
-margin_bottom = 264.226
+margin_left = 102.848
+margin_top = 281.367
+margin_right = 167.848
+margin_bottom = 301.367
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "Join"
@@ -183,10 +147,10 @@ custom_colors/font_color = Color( 0.820312, 0.291595, 0.291595, 1 )
 align = 1
 
 [node name="Quit" type="Button" parent="connect"]
-margin_left = 108.146
-margin_top = 365.287
-margin_right = 167.146
-margin_bottom = 385.287
+margin_left = 107.448
+margin_top = 377.159
+margin_right = 166.448
+margin_bottom = 397.159
 text = "Quit"
 
 [node name="Label" type="Label" parent="connect"]
@@ -208,6 +172,5 @@ margin_bottom = 58.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="connect/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="connect/join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="connect/Quit" to="." method="_on_Quit_pressed"]
