@@ -1,7 +1,7 @@
 extends KinematicBody
 
 const coord = preload("res://scenes/Coordinate.tscn")
-onready var nav = $"../../Floor/Navigation" # PUT PLAYER IN 'players' spatial
+onready var nav = $"../../Navigation" # PUT PLAYER IN 'players' spatial
 onready var player_body_animation = $player_body/human_body/AnimationPlayer
 puppet var previous_coord = null
 const move_speed = 5
@@ -13,7 +13,6 @@ var player_id
 puppet var slave_pos = Vector3()
 puppet var slave_path = []
 puppet var slave_path_index = 0
-var is_network_master = is_network_master()
 
 var path_idx = 0
 var path = []
@@ -28,7 +27,6 @@ func set_player_name(new_name):
 
 func _ready():
 	slave_pos = self.get_translation()
-	is_network_master = is_network_master()
 	if (control):
 		$Camera.make_current()
 
@@ -38,6 +36,7 @@ func _physics_process(_delta):
 		if path_idx < path.size():
 			move_vec = (path[path_idx] - global_transform.origin)
 			if move_vec.length() < 0.1:
+				print(path)
 				path_idx += 1
 				rset("slave_path_index", path_idx)
 				# Prevent from breaking - check if index is in scope of array
@@ -46,7 +45,7 @@ func _physics_process(_delta):
 				if (path_idx == path.size()):
 					player_body_animation.play("Rest.001")
 			else:
-				move_and_slide(move_vec.normalized() * move_speed, Vector3(0, 1, 0))
+				global_transform.origin = move_and_slide(move_vec.normalized() * move_speed, Vector3(0, 1, 0))
 				player_body_animation.play("Walk.001")
 				rset("slave_pos", get_translation())
 	# (NETWORK): what you see about others

@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.14902, 0.14902, 0.14902, 1 )
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.0862745 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_top = 2.0
+expand_margin_bottom = 1.0
+shadow_color = Color( 0.580392, 0.266667, 0.266667, 0.6 )
+
+[node name="target_label" type="Control"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.0
+margin_right = 80.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="target_name" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.831373 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.9
+margin_top = 1.0
+margin_right = 35.9
+margin_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1.0262, 0.994282 )
+custom_styles/normal = SubResource( 2 )
+text = "Target"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="target_level" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.831373 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -35.9
+margin_top = -9.0
+margin_right = 35.9
+margin_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1.0262, 0.994282 )
+custom_styles/normal = SubResource( 2 )
+text = "level 1"
+align = 1
+valign = 1

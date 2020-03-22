@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://character/Player_SP.gd" type="Script" id=1]
 [ext_resource path="res://character/dummy_direction.gd" type="Script" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://character/player_body.gd" type="Script" id=4]
 [ext_resource path="res://scenes/human_body.tscn" type="PackedScene" id=5]
 [ext_resource path="res://character/name_tag_position.gd" type="Script" id=6]
+[ext_resource path="res://scenes/target_label.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 margin = 0.001
 radius = 0.3
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 0.0862745 )
 corner_radius_top_left = 3
 corner_radius_top_right = 3
@@ -45,7 +46,10 @@ script = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36438, 0 )
 script = ExtResource( 6 )
 
+[node name="target_label" parent="." instance=ExtResource( 7 )]
+
 [node name="name_tag" type="Control" parent="."]
+editor/display_folded = true
 margin_left = -2.0
 margin_right = 2.0
 margin_bottom = 3.0
@@ -62,7 +66,7 @@ margin_bottom = -0.136583
 grow_horizontal = 2
 grow_vertical = 2
 rect_scale = Vector2( 1.0262, 0.994282 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 text = "Ankeris"
 align = 1
 valign = 1

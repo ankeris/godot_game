@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Forgotten Road"
 run/main_scene="res://scenes/main.tscn"
 
+[autoload]
+
+global_control="*res://scripts/global_control.gd"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

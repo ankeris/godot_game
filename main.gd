@@ -12,7 +12,7 @@ func _ready():
 #	timecop.start()
 	$network.start_server()
 		
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("ui_end"):
 		get_tree().reload_current_scene()
 
